@@ -1,0 +1,22 @@
+#server config
+server:
+  port: 8002
+
+#oracle driver config
+spring:
+  datasource:
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy  #오라클 드라이버에 대한 요청을 가로채 로그를 출력할 수 있게 하는 프록시
+    url: jdbc:log4jdbc:oracle:thin:@localhost:1521:xe
+    username: C##GREEDY
+    password: GREEDY
+    hikari:
+      auto-commit: false
+
+#jpa config
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    database: oracle
+    properties:
+      hibernate:
+        '[format_sql]' : true    #JPA의 내부 구현체인 Hibernate를 간단하게 포맷팅
