@@ -31,6 +31,7 @@ public class MenuService {
         MenuDTO menu =
                 modelMapper.map(menuRepository.findMenuByCode(entityManager, menuCode), MenuDTO.class);
 
+        /* test */
         return menu;
     }
 }
